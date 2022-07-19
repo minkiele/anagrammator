@@ -1,0 +1,25 @@
+{
+  "name": "anagrammator",
+  "version": "1.0.0",
+  "description": "An utility to get all the unique anagrams of a string",
+  "main": "lib/anagrammator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minkiele/anagrammator.git"
+  },
+  "keywords": [
+    "Anagram"
+  ],
+  "author": "Michele Montagner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/minkiele/anagrammator/issues"
+  },
+  "homepage": "https://github.com/minkiele/anagrammator#readme",
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
+}
