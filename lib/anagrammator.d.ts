@@ -8,3 +8,4 @@
  */
 declare function anagrammator(input: string): Array<string>;
 export default anagrammator;
+export declare function countAnagrams(input: string): number;
