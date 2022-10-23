@@ -3,7 +3,7 @@ const { default: anagrammator, countAnagrams } = require('../lib/anagrammator');
 describe('Anagrammator', () => {
     it('should generate 6 anagrams out of ABC', () => {
         const anagrams = anagrammator('ABC');
-        expect(anagrams).toHaveLength(6);
+            expect(anagrams).toHaveLength(6);
         expect(anagrams).toContain('ABC');
         expect(anagrams).toContain('ACB');
         expect(anagrams).toContain('BAC');
@@ -16,7 +16,7 @@ describe('Anagrammator', () => {
         expect(anagrams).toHaveLength(12);
         expect(anagrams).toContain('AABC');
         expect(anagrams).toContain('AACB');
-        expect(anagrams).toContain('ABAC');
+          expect(anagrams).toContain('ABAC');
         expect(anagrams).toContain('ABCA');
         expect(anagrams).toContain('ACAB');
         expect(anagrams).toContain('ACBA');

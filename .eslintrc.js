@@ -4,8 +4,13 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],
   ignorePatterns: ['lib/**'],
-  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
+    'prettier',
+  ],
   rules: {
-    "eslint@typescript-eslint/no-var-requires": "off"
-  }
+    '@typescript-eslint/no-var-requires': 'off',
+  },
 };

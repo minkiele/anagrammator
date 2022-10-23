@@ -6,7 +6,7 @@
  * @param input string The string to anagram
  * @returns An array with all the anagrams for the input string
  */
-function anagrammator (input: string): Array<string> {
+function anagrammator(input: string): Array<string> {
   if (input == null || input.length === 0) {
     return [];
   } else if (input.length === 1) {
@@ -18,12 +18,16 @@ function anagrammator (input: string): Array<string> {
       const currentChar = input.charAt(i);
       if (!usedLetters.includes(currentChar)) {
         usedLetters.push(currentChar);
-        output.push(...anagrammator(`${input.substring(0, i)}${input.substring(i + 1)}`).map((anagram) => `${anagram}${currentChar}`));
+        output.push(
+          ...anagrammator(`${input.substring(0, i)}${input.substring(i + 1)}`).map(
+            (anagram) => `${anagram}${currentChar}`,
+          ),
+        );
       }
     }
     return output;
   }
-};
+}
 export default anagrammator;
 
 /**
@@ -33,22 +37,22 @@ export default anagrammator;
  */
 function factorial(input: number): number {
   let output = 1;
-  for(let i = 2; i <= input; i += 1) {
+  for (let i = 2; i <= input; i += 1) {
     output *= i;
   }
   return output;
-};
+}
 
-export function countAnagrams (input: string): number {
+export function countAnagrams(input: string): number {
   let totalAnagrams = factorial(input.length);
   const letters: Record<string, number> = {};
-  for(let i = 0; i < input.length; i += 1) {
+  for (let i = 0; i < input.length; i += 1) {
     letters[input[i]] = (letters[input[i]] ?? 0) + 1;
   }
   Object.keys(letters).forEach((letter) => {
-    if(letters[letter] > 1) {
+    if (letters[letter] > 1) {
       totalAnagrams /= factorial(letters[letter]);
     }
   });
   return totalAnagrams;
-};
+}
