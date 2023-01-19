@@ -8,4 +8,8 @@
  */
 declare function anagrammator(input: string): Array<string>;
 export default anagrammator;
-export declare function countAnagrams(input: string): number;
+export declare const getCountAnagramFactors: (input: string) => {
+    numerator: number;
+    denominator: Array<number>;
+};
+export declare const countAnagrams: (input: string) => number;

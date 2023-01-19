@@ -43,16 +43,20 @@ function factorial(input: number): number {
   return output;
 }
 
-export function countAnagrams(input: string): number {
-  let totalAnagrams = factorial(input.length);
-  const letters: Record<string, number> = {};
-  for (let i = 0; i < input.length; i += 1) {
-    letters[input[i]] = (letters[input[i]] ?? 0) + 1;
-  }
-  Object.keys(letters).forEach((letter) => {
-    if (letters[letter] > 1) {
-      totalAnagrams /= factorial(letters[letter]);
+export const getCountAnagramFactors = (input: string): {numerator: number, denominator: Array<number>} => {
+    const numerator = factorial(input.length);
+    const letters: Record<string, number> = {};
+    for (let i = 0; i < input.length; i += 1) {
+      letters[input[i]] = (letters[input[i]] ?? 0) + 1;
     }
-  });
-  return totalAnagrams;
+    const denominator = Object.keys(letters).map((letter) => factorial(letters[letter]));
+    return {
+        numerator,
+        denominator
+    };
+};
+
+export const countAnagrams = (input: string): number => {
+    const {numerator, denominator} = getCountAnagramFactors(input);
+    return denominator.reduce((acc, factor) => factor > 1 ? (acc / factor) : acc, numerator);
 }
