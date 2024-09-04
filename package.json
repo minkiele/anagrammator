@@ -1,6 +1,6 @@
 {
   "name": "anagrammator",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Anagràmmator, with the accent on the third a is an utility to get all the unique anagrams of a string",
   "main": "lib/anagrammator.js",
   "scripts": {
